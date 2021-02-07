@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  </head>
+  <body>
+      <div class="container">
+      <h1 class="text-center">The Klomi Cam</h1>
+      <div class="row">
+          <div class="col-12">
+              <img width="100%" src="/stream.mjpg"/> 
+          </div>
+      </div>
+      <iframe hidden name="hiddenFrame" ></iframe>
+      <hr>
+      <form class="row" action="/setmovemode" method="get" target="hiddenFrame">
+          <div class="col-6">
+            <button class="btn btn-success btn-block" type="submit" name="following" value="true">Follow Me</button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-danger btn-block" type="submit" name="following" value="false">Don't Follow Me</button>
+          </div>
+      </form>
+      <form class="row" action="/playsong" method="get" target="hiddenFrame">
+        <div class="col-6">
+            <input class="form-control" type="text" placeholder="Word or Phrase" name="song">
+        </div>
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" type="submit" value="Submit">Inspire Me!</button>
+        </div>
+      </form>
+      <form class="row" action="/songctl" method="get" target="hiddenFrame">
+        <div class="col-12 btn-group">
+            <button class="btn btn-secondary " type="submit" name="ctl" value="pause"><i class="fa fa-pause"></i></button>
+            <button class="btn btn-secondary " type="submit" name="ctl" value="play"><i class="fa fa-play"></i></button>
+            <button class="btn btn-secondary " type="submit" name="ctl" value="next"><i class="fa fa-forward"></i></button>
+        </div>
+      </form>
+      </div>
+  </body>
+</html>
